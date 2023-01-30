@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="21513" systemVersion="22C65" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="CountryEntity" representedClassName=".CountryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="countryName" attributeType="String"/>
+        <attribute name="totalDeath" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="summary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SummaryEntity" inverseName="country" inverseEntity="SummaryEntity"/>
+    </entity>
+    <entity name="GlobalEntity" representedClassName=".GlobalEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="String"/>
+        <attribute name="newConfirmed" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="newDeath" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="newRecovered" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalConfirmed" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalDeath" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="totalRecovered" attributeType="Integer 64" defaultValueString="0" usesScalarValueType="YES"/>
+        <relationship name="summary" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="SummaryEntity" inverseName="global" inverseEntity="SummaryEntity"/>
+    </entity>
+    <entity name="SummaryEntity" representedClassName=".SummaryEntity" syncable="YES" codeGenerationType="class">
+        <attribute name="date" attributeType="String"/>
+        <attribute name="message" attributeType="String"/>
+        <relationship name="country" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="CountryEntity" inverseName="summary" inverseEntity="CountryEntity"/>
+        <relationship name="global" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="GlobalEntity" inverseName="summary" inverseEntity="GlobalEntity"/>
+    </entity>
+</model>
