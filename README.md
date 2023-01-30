@@ -6,6 +6,6 @@
 * Networking: [Moya](https://cocoapods.org/pods/Moya).
 * Storage: CoreData, SDWebImage & UserDefaults
 * UI: Snapkit, Paper-on-boarding, Charts
-* Unit & UI Tests
+* Unit & UI & Snapshot Tests
 
 # <img src="image.jpg">
